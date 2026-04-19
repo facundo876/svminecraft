@@ -25,3 +25,33 @@ Con intervalo personalizado (en segundos):
 
 ## Detener ejecución
 Presiona `Ctrl + C` para finalizar el refresco continuo del panel.
+
+## Integración de `server/`
+La carpeta `server/` se integra con una estrategia de versionado selectivo:
+- Se versionan archivos reproducibles (plantillas, scripts y documentación).
+- Se excluye estado runtime (mundo, logs, binarios y datos generados).
+
+Archivos clave añadidos:
+- `server/README.md`
+- `server/start-server.ps1`
+- `server/server.properties.example`
+- `.gitignore` (con reglas de exclusión para runtime del servidor)
+
+## Setup del servidor Minecraft
+1. Entrar a la carpeta del servidor:
+   - `cd .\server`
+2. Crear tu configuración local desde la plantilla:
+   - `Copy-Item .\server.properties.example .\server.properties`
+3. Editar `server.properties` según tu entorno (puerto, whitelist, etc.).
+4. Asegurar aceptación de EULA local:
+   - `eula=true` en `eula.txt`
+5. Iniciar servidor:
+   - `.\start-server.ps1`
+
+### Parámetros útiles del script de arranque
+- Cambiar memoria:
+  - `.\start-server.ps1 -MinMemory 2G -MaxMemory 4G`
+- Especificar ruta del jar:
+  - `.\start-server.ps1 -JarPath .\server.jar`
+- Especificar ejecutable Java:
+  - `.\start-server.ps1 -JavaPath "C:\Program Files\Java\bin\java.exe"`

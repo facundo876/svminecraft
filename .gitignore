@@ -1,0 +1,14 @@
+# Estado runtime del servidor Minecraft (no versionar)
+server/logs/
+server/world/
+server/versions/
+server/libraries/
+server/*.jar
+server/startup-test*.log
+server/eula.txt
+server/usercache.json
+server/ops.json
+server/whitelist.json
+server/banned-ips.json
+server/banned-players.json
+server/server.properties
