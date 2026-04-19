@@ -38,6 +38,11 @@ Archivos clave añadidos:
 - `.gitignore` (con reglas de exclusión para runtime del servidor)
 
 ## Setup del servidor Minecraft
+### Prerrequisitos
+- Java 17+ instalado y disponible en `PATH` (o indicar ruta con `-JavaPath`).
+- Archivo `server.jar` presente en `server/`.
+
+### Primer inicio (setup)
 1. Entrar a la carpeta del servidor:
    - `cd .\server`
 2. Crear tu configuración local desde la plantilla:
@@ -47,6 +52,19 @@ Archivos clave añadidos:
    - `eula=true` en `eula.txt`
 5. Iniciar servidor:
    - `.\start-server.ps1`
+
+### Arranques posteriores
+Con la configuración ya creada:
+- `cd .\server`
+- `.\start-server.ps1`
+
+### Verificación de arranque
+Durante el inicio, validar en consola o en `server/logs/latest.log` la línea:
+- `Done (...)! For help, type "help"`
+Si aparece, el servidor quedó inicializado correctamente.
+
+### Detener el servidor
+- En la consola del servidor, usar `Ctrl + C` para apagarlo de forma controlada.
 
 ### Parámetros útiles del script de arranque
 - Cambiar memoria:
